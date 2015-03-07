@@ -1,21 +1,21 @@
-# docker-minecraft
+# docker-ftbi-minecraft
 
-A nice and easy way to get a Minecraft server up and running using docker. For
+A nice and easy way to get a Minecraft FTB Infinity server up and running using docker. For
 help on getting started with docker see the [official getting started guide][0].
 For more information on Minecraft and check out it's [website][1].
 
 
-## Building docker-minecraft
+## Building docker-fbti-minecraft
 
 Running this will build you a docker image with the latest version of both
-docker-minecraft and Minecraft itself.
+docker-fbti-minecraft and Minecraft itself.
 
-    git clone https://github.com/idxbroker/docker-minecraft
-    cd docker-minecraft
-    sudo docker build -t idxbroker/minecraft .
+    git clone https://github.com/Bishma/docker-fbti-minecraft
+    cd docker-fbti-minecraft
+    sudo docker build -t bishma/ftbi-minecraft .
 
 
-## Running docker-minecraft
+## Running docker-fbti-minecraft
 
 Running the first time will set your port to a static port of your choice so
 that you can easily map a proxy to. If this is the only thing running on your
@@ -28,7 +28,7 @@ already created before running `mkdir -p /mnt/minecraft`.
 
     sudo docker run -d=true -p=25565:25565 -v=/mnt/minecraft:/data idxbroker/minecraft /start
 
-From now on when you start/stop docker-minecraft you should use the container id
+From now on when you start/stop docker-fbti-minecraft you should use the container id
 with the following commands. To get your container id, after you initial run
 type `sudo docker ps` and it will show up on the left side followed by the
 image name which is `idxbroker/minecraft:latest`.
@@ -40,7 +40,7 @@ image name which is `idxbroker/minecraft:latest`.
 ### Notes on the run command
 
  + `-v` is the volume you are mounting `-v=host_dir:docker_dir`
- + `idxbroker/minecraft` is simply what I called my docker build of this image
+ + `bishma/ftbi-minecraft` is simply what I called my docker build of this image
  + `-d=true` allows this to run cleanly as a daemon, remove for debugging
  + `-p` is the port it connects to, `-p=host_port:docker_port`
 

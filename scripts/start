@@ -1,18 +1,22 @@
 #!/bin/bash
 # -----------------------------------------------------------------------------
+# docker-ftbi-mincraft /start script bu Bishma based on
 # docker-minecraft /start script
 #
 # Authors: Isaac Bythewood
 # Updated: September 4th, 2014
 # -----------------------------------------------------------------------------
 
+MINECRAFTHOME=/data
+JARFAILE=/data/minecraft_server.1.7.10.jar
+FTBURL=http://www.creeperrepo.net/FTB2/modpacks%5EFTBInfinity%5E1_1_0%5EFTBInfinityServer.zip
+FTBLOCAL=/data/infinity.zip
 
-if [ ! -f /data/minecraft_server.jar ]
+if [ ! -f $FTBLOCAL ]
 then
-    curl "https://s3.amazonaws.com/Minecraft.Download/versions/1.8/minecraft_server.1.8.jar" -o /data/minecraft_server.jar
-fi
-
-if ( ! -f /data/eula.txt); then
+    curl -S $FTBURL -o $FTBLOCAL && \
+    unzip $FTBLOCAL -d $MINECRAFTHOME && \
+    chmod 755 /data/FTBInstall.sh && /data/FTBInstall.sh
     echo "eula=true" > /data/eula.txt
 fi
 
