@@ -5,17 +5,17 @@ help on getting started with docker see the [official getting started guide][0].
 For more information on Minecraft and check out it's [website][1].
 
 
-## Building docker-fbti-minecraft
+## Building docker-ftbi-minecraft
 
 Running this will build you a docker image with the latest version of both
-docker-fbti-minecraft and Minecraft itself.
+docker-ftbi-minecraft and Minecraft itself.
 
-    git clone https://github.com/Bishma/docker-fbti-minecraft
-    cd docker-fbti-minecraft
+    git clone https://github.com/Bishma/docker-ftbi-minecraft
+    cd docker-ftbi-minecraft
     sudo docker build -t bishma/ftbi-minecraft .
 
 
-## Running docker-fbti-minecraft
+## Running docker-ftbi-minecraft
 
 Running the first time will set your port to a static port of your choice so
 that you can easily map a proxy to. If this is the only thing running on your
@@ -28,7 +28,7 @@ already created before running `mkdir -p /mnt/minecraft`.
 
     sudo docker run -d=true -p=25565:25565 -v=/mnt/minecraft:/data idxbroker/minecraft /start
 
-From now on when you start/stop docker-fbti-minecraft you should use the container id
+From now on when you start/stop docker-ftbi-minecraft you should use the container id
 with the following commands. To get your container id, after you initial run
 type `sudo docker ps` and it will show up on the left side followed by the
 image name which is `idxbroker/minecraft:latest`.
