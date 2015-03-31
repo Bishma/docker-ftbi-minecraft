@@ -9,7 +9,7 @@
 
 MINECRAFTHOME=/data
 JARFAILE=/data/minecraft_server.1.7.10.jar
-FTBURL=http://www.creeperrepo.net/FTB2/modpacks%5EFTBInfinity%5E1_2_1%5EFTBInfinityServer.zip
+FTBURL=http://www.creeperrepo.net/FTB2/modpacks%5EFTBInfinity%5E1_3_4%5EFTBInfinityServer.zip
 FTBLOCAL=/data/infinity.zip
 
 if [ ! -f $FTBLOCAL ]
